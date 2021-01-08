@@ -19,13 +19,15 @@ class LinkedList:
             print(cur.data)
     
     def mergeSortedLinkedList(self,first,second,res): 
-        while(first.next!=None or second.next!=None):   
+        while(True):   
             if(first is None):
                 print(second.data)
-                res = second     
+                res = second
+                return 
             elif(second is None):
                 print(first.data)
-                res = first
+                res = first.next
+                return
             else:
                 if first.data < second.data:
                     print(first.data)
@@ -58,5 +60,5 @@ secondList.printElements()
 
 print("inside function")
 mergedList=LinkedList()
-mergedList=mergedList.mergeSortedLinkedList(firstList.head.next,secondList.head.next,mergedList.head)
+mergedList.mergeSortedLinkedList(firstList.head.next,secondList.head.next,mergedList.head).printElements()
 
