@@ -1,20 +1,3 @@
-# def mergeSortedLinkedList(head1,head2):
-#     if head1.next == None:
-#         res.next = head2
-#     elif head2.next == None:
-#         res.next = head1
-#     else:
-#         if head1.data<head2.data:
-#             res.data=head1.data
-#             res.next=None
-#             head1=head1.next
-#         else:
-#             res.data=head2.data
-#             res.next=None
-#             head2=head2.next
-#         return mergeSortedLinkedList(head1,head2)
-
-
 class node:
     def __init__(self,data=None):
         self.data=data
@@ -38,9 +21,11 @@ class LinkedList:
     def mergeSortedLinkedList(self,first,second,res): 
         while(first.next!=None or second.next!=None):   
             if(first is None):
-                res = second.next      
+                print(second.data)
+                res = second     
             elif(second is None):
-                res = first.next
+                print(first.data)
+                res = first
             else:
                 if first.data < second.data:
                     print(first.data)
@@ -74,6 +59,4 @@ secondList.printElements()
 print("inside function")
 mergedList=LinkedList()
 mergedList=mergedList.mergeSortedLinkedList(firstList.head.next,secondList.head.next,mergedList.head)
-# print("Merged Linked List")
-# mergedList.printElements()
-# # firstList.printElements()
+
