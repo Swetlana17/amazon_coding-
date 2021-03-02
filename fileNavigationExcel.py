@@ -26,12 +26,12 @@ if __name__ == "__main__":
     sheetRow = 0
     sheetCol = -1
     for roots, dirs, files in os.walk(
-        "C:\\Users\\USER\\Documents\\Ifastools\\", topdown=False
+        r"C:\\Users\\USER\\Documents\\Ifastools\\", topdown=False
     ):
         for name in files:
-            if os.path.splitext(name)[1] == ".html":
-                root = re.escape(roots) + "\\"
-                fullPath = root + "\\" + name
+            if os.path.splitext(name)[0]!="Summary" and os.path.splitext(name)[1] == ".html":
+                # root = re.escape(roots) + "\\"
+                fullPath = roots + "\\" + name
                 filepath = fullPath
                 sheetCol = sheetCol + 1
                 sheetRow = 0
